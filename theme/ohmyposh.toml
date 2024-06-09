@@ -14,7 +14,6 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'diamond'
     foreground = '#000000'
     background = '#d3d7cf'
-    leading_diamond = '╭─'
     template = ' {{ if .WSL }}WSL at {{ end }}{{.Icon}} '
 
   [[blocks.segments]]
@@ -44,9 +43,19 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       fetch_status = true
       fetch_upstream_icon = true
 
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground = '#d3d7cf'
+
 [[blocks]]
-  type = 'prompt'
+  type = 'rprompt'
   alignment = 'right'
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground = '#d3d7cf'
 
   [[blocks.segments]]
     type = 'node'
@@ -165,23 +174,3 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
     [blocks.segments.properties]
       always_enabled = true
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'left'
-  newline = true
-
-  [[blocks.segments]]
-    type = 'text'
-    style = 'plain'
-    foreground = '#d3d7cf'
-    template = '╰─'
-
-[[blocks]]
-  type = 'rprompt'
-
-  [[blocks.segments]]
-    type = 'text'
-    style = 'plain'
-    foreground = '#d3d7cf'
-    template = '─╯'
