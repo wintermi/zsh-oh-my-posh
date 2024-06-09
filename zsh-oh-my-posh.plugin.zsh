@@ -7,6 +7,12 @@ if ! (( $+commands[oh-my-posh] )); then
     return
 fi
 
+# If the 'POSH_THEME' environment variable is not populated then set
+# the default theme configuration to the one provided with this plugin
+if [[ -z "$POSH_THEME" ]]; then
+    export POSH_THEME="${0:A:h}/theme/ohmyposh.toml"
+fi
+
 # Init cache directory for `oh-my-posh` command
 local INIT_CACHE_DIR="${0:A:h}/init"
 
