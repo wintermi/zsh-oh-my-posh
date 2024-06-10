@@ -163,6 +163,9 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     background_templates = ['{{ if gt .Code 0 }}#cc2222{{ end }}']
     template = ' {{ if gt .Code 0 }}{{ reason .Code }}{{ else }}{{ end }} '
 
+    [blocks.segments.properties]
+      always_enabled = true
+
   [[blocks.segments]]
     type = 'executiontime'
     style = 'powerline'
@@ -171,6 +174,3 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     foreground = '#000000'
     background = '#c4a000'
     template = ' {{ .FormattedMs }}  '
-
-    [blocks.segments.properties]
-      always_enabled = true
