@@ -12,16 +12,16 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   [[blocks.segments]]
     type = 'os'
     style = 'diamond'
-    foreground = '#000000'
-    background = '#d3d7cf'
+    foreground = '#090C0C'
+    background = '#C0CAF5'
     template = ' {{ if .WSL }}WSL at {{ end }}{{.Icon}} '
 
   [[blocks.segments]]
     type = 'path'
     style = 'powerline'
     powerline_symbol = ''
-    foreground = '#e4e4e4'
-    background = '#3465a4'
+    foreground = '#EEEEEE'
+    background = '#6992D7'
     template = '  {{ .Path }} '
 
     [blocks.segments.properties]
