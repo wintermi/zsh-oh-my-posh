@@ -12,16 +12,16 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   [[blocks.segments]]
     type = 'os'
     style = 'diamond'
-    foreground = '#090C0C'
-    background = '#C0CAF5'
+    foreground = '#090c0c'
+    background = '#c0caf5'
     template = ' {{ if .WSL }}WSL at {{ end }}{{.Icon}} '
 
   [[blocks.segments]]
     type = 'path'
     style = 'powerline'
     powerline_symbol = ''
-    foreground = '#EEEEEE'
-    background = '#6992D7'
+    foreground = '#e4e4e4'
+    background = '#3465a4'
     template = '  {{ .Path }} '
 
     [blocks.segments.properties]
@@ -153,6 +153,16 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     background = '#ffff66'
     template = '  '
 
+    [[blocks.segments]]
+        type = 'status'
+        style = 'powerline'
+        powerline_symbol = ''
+        invert_powerline = true
+        foreground = '#a3aed2'
+        background = '#394260'
+        background_templates = ['{{ if gt .Code 0 }}#cc2222{{ end }}']
+        template = ' {{ if gt .Code 0 }}{{ reason .Code }}{{ else }}{{ end }} '
+
   [[blocks.segments]]
     type = 'executiontime'
     style = 'powerline'
@@ -161,16 +171,6 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     foreground = '#000000'
     background = '#c4a000'
     template = ' {{ .FormattedMs }}  '
-
-  [[blocks.segments]]
-    type = 'status'
-    style = 'powerline'
-    powerline_symbol = ''
-    invert_powerline = true
-    foreground = '#d3d7cf'
-    background = '#000000'
-    background_templates = ['{{ if gt .Code 0 }}#cc2222{{ end }}']
-    template = ' {{ if gt .Code 0 }}{{ reason .Code }}{{ else }}{{ end }} '
 
     [blocks.segments.properties]
       always_enabled = true
