@@ -13,15 +13,7 @@ if [[ -z "$POSH_THEME" ]]; then
     export POSH_THEME="${0:A:h}/theme/ohmyposh.toml"
 fi
 
-# Init cache directory for `oh-my-posh` command
-local INIT_CACHE_DIR="${0:A:h}/init"
-
-# Only regenerate init script if older than 7 days, or does not exist
-if [[ ! -f "$INIT_CACHE_DIR/_ohmyposh"  ||  ! $(find "$INIT_CACHE_DIR/_ohmyposh" -newermt "7 days ago" -print) ]]; then
-    oh-my-posh init zsh --print >| "$INIT_CACHE_DIR/_ohmyposh"
-fi
-
 # Initialise the Oh My Posh Prompt
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-    source "$INIT_CACHE_DIR/_ohmyposh"
+  eval "$(oh-my-posh init zsh)"
 fi
