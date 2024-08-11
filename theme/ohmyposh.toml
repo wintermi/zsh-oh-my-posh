@@ -170,9 +170,12 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
   [[blocks.segments]]
     type = 'executiontime'
-    style = 'powerline'
+    style = 'diamond'
     powerline_symbol = ''
     invert_powerline = true
     foreground = '#545c7e'
     background = '#ff9e65'
-    template = ' {{ .FormattedMs }}  '
+    template = ' {{ .FormattedMs }} '
+
+    [blocks.segments.properties]
+      always_enabled = true
