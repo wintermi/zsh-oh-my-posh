@@ -3,7 +3,6 @@
 
 # Exit if the 'oh-my-posh' command can not be found
 if ! (( $+commands[oh-my-posh] )); then
-    echo "WARNING: 'oh-my-posh' command not found"
     return
 fi
 
@@ -15,5 +14,5 @@ fi
 
 # Initialise the Oh My Posh Prompt
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
+  source <(oh-my-posh init zsh)
 fi
