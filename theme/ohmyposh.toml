@@ -1,6 +1,6 @@
 #:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
-version = 2
+version = 3
 final_space = true
 disable_notice = true
 auto_upgrade = false
@@ -9,7 +9,6 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
 
   [[blocks.segments]]
     type = 'os'
@@ -17,6 +16,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     foreground = '#080808'
     background = '#c0caf5'
     template = ' {{ if .WSL }}WSL at {{ end }}{{.Icon}} '
+    newline = true
 
   [[blocks.segments]]
     type = 'path'
