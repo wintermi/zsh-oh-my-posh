@@ -9,7 +9,7 @@
       "segments": [
         {
           "style": "diamond",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "template": "\n {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "foreground": "#080808",
           "background": "#c0caf5",
           "type": "os"
