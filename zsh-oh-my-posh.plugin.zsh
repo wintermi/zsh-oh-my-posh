@@ -14,5 +14,5 @@ fi
 
 # Initialise the Oh My Posh Prompt
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  source <(oh-my-posh init zsh)
+  source <(oh-my-posh init zsh --config $POSH_THEME)
 fi
